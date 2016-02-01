@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+- 4
+- stable
+notifications:
+  email: false
+  webhooks:
+    urls:
+    - https://webhooks.gitter.im/e/54f8a1e753f859f5ca1a
+    on_start: never
+    on_failure: change
+deploy:
+  provider: npm
+  email: jimmy.aumard@gmail.com
+  api_key:
+    secure: iSfERxkSW0qAhIvKX0TyLIPOfIDjQeQAYPzowZamw8a7dBvWhZkP3KTXn1TmDry+kyQOJ0hOEgeKiO1IfSr4s7oD+LhJEo20MxLWC+G6bIzq39/Ize9vcmnQaT9XzSZuQ7U2dep4nHirIyIutdkvbwFPAtX5o98JDmOcDDEDdP3TyaWpY2duDCfVUK4S90wM6s9xiIKggcmdiOD60LiifMChhcr28GLJCwSGxFYf+QKPyqKAI6sLj1vMvAgGcQGv8btMoOO9SYfNiszWJosqx08SEFgij0bN0ngDX43apeE9Ze8RxjWwvNCeRoC0VnW8qVQHcIucAjiloaXMw+qx1jnRG5O2/wkEf/GFLqxegMgPHRQBKC7yH1aDhXbHBNqkAlOMhmxyYAVW+F6KxiHFSJP2pO0quozyeG0n7zzU+yGtEh9hpOV6nOUY9lwQdKkmq/tSd8omx1u5lkcEu+bF0HsmRsXVIQLKzLPKg7BlbxybYDeXanLYhZ8XWFmPqZebrEQt5GbGv9aQnWXETBceEmJ6W4ZRw7ijb7A+NdTeM0xza4OXfAADg/Jxfi7EIMUHFcZHYH+MN2w05lbY7kzUoYFZ/W9MoYrshtGIWczwlsygqzht9JtyOKJTTMEtR8LdUdtemo1LqattMaBuPsb6UDiM1RvMwii4UvuU8+j2ZmQ=
+  on:
+    tags: true
+    repo: jaumard/trailpack-analytics
+    node: stable
