@@ -10,10 +10,10 @@ const App = {
     version: '1.0.0'
   },
   api: Api,
-  analytics: {
-    accountID: 'UA-XXXX-XX'
-  },
   config: {
+    analytics: {
+      accountID: 'UA-26212073-2'
+    },
     main: {
       packs: [
         smokesignals.Trailpack,
@@ -26,10 +26,15 @@ const App = {
     routes: [
       {
         method: ['GET'],
-        path: '/default/info',
+        path: '/default/{info}',
         handler: 'DefaultController.info'
       }
     ],
+    policies: {
+      DefaultController: {
+        info: ['Analytics.sendPage']
+      }
+    },
     web: {port: 3000}
   }
 }

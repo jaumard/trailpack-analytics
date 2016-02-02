@@ -11,7 +11,6 @@ const _ = require('lodash')
 module.exports = class AnalyticsService extends Service {
   init () {
     this.visitor = ua(this.app.config.analytics.accountID)
-
   }
 
   sendPage(path, title, hostname) {
@@ -19,7 +18,9 @@ module.exports = class AnalyticsService extends Service {
     if (_.isObject(path)) {
       page = path
     }
-    this.visitor.pageview(page).send()
+    this.visitor.pageview(page, (error) => {
+      this.app.log.warn(error)
+    })
     return this
   }
 
@@ -34,7 +35,9 @@ module.exports = class AnalyticsService extends Service {
     if (_.isObject(eventCategorie)) {
       event = eventCategorie
     }
-    this.visitor.event(event).send()
+    this.visitor.event(event, (error) => {
+      this.app.log.warn(error)
+    })
   }
 }
 
