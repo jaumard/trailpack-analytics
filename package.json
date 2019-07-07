@@ -27,7 +27,8 @@
   "dependencies": {
     "lodash": "^4.2.0",
     "trailpack": "^1.0.0-alpha-2",
-    "universal-analytics": "^0.3.10"
+    "universal-analytics": "^0.3.10",
+    "snyk": "^1.192.3"
   },
   "devDependencies": {
     "eslint": "2.0.0-beta.2",
@@ -45,7 +46,9 @@
     "trailpack"
   ],
   "scripts": {
-    "test": "eslint . && mocha"
+    "test": "eslint . && mocha",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": ">= 4.0.0"
@@ -54,5 +57,6 @@
     "extends": "trails"
   },
   "repository": "jaumard/trailpack-analytics",
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
